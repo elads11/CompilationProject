@@ -1,0 +1,40 @@
+Hello,
+We added the original tests with line numbers and our own tests which are the original ones without comments. The reason is that the comments caused mess with line numbers, due to a problem with lexical analyser. However, we couldn't find the original .lex file because the computer we worked on died, and we didnt have backup (it is a referred file in the project).
+
+Please run those tests, Thanks!!
+
+Here are comments we added regarding oue results for the 3 provided tests.
+
+TEST 1:
+
+lines 37, 39, 40: Different types, assignment and operations between real and integer numbers, not according to project rule: 
+•	if all arguments of arithmetic expression of the expressions are of the same basic_type  (or of a user-defined type that is defined as this basic_type) then the entire expression type is of this basic_type;
+
+
+lines 55, 57, 65, 68, 70: We think those are not different types, because of the rule: 
+-	for assignment of the form      receiver = expression   :
+•	left and right sides must be of exactly same type
+•	left side is of a user-defined type  left_type that is defined as some basic type (integer or real), and right side is of the same basic type; for example:
+     type salary is integer;
+		     my_salary : salary;
+		     my_salary = 1000;  -- this is legal
+ 
+We understand it as legal because of the salary example where the types are not "exactly the same type" but exactly the same derived types (both integer) and so added another translation into the original basic type (for example, word into integer).
+To be more specific, salary values can be integers such as 1, 2, 5, etc.. When used in expression, a variable of type salary will have those integer values which fit exactly operations and expressions with integers.
+
+
+line 98 is ok  - We were correct to print an error because arr has been defined as a type and free can only be used on variables according to our own knowledge of C language, where we only used to free variables. That was what we supposed and that is the reason we added a check that prints an error if free is not used on a variable only.
+
+
+TEST 2:
+line 12 - we think we are correct not to print an error because 'i' is defined as word which is of type integer and can be used as index of for loop (again, same as salary example).
+
+
+TEST 3:
+line 28 - same as lines 55, 57, 65, 68, 70 in test 1. We think this is ok because of the salary example.
+
+lines 62, 68, 69 - 'i' has been defined as int in the global scope and int has been defined as integer type so it is of integer basic type. So it can be used as index in the array and it is legal.
+
+
+
+

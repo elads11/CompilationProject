@@ -1,0 +1,28 @@
+Error: Variable already defined. Line 12
+Error: Illegal variable type. Please use one that exists. Line 13
+Error: Different types in assignment. Line 20
+Error: Type mismatch in operation. Line 21
+Error: Variable undefined. Line 22
+Error: Different types in assignment. Line 24
+Error: Different types in assignment. Line 26
+Error: Different types in assignment. Line 27
+Error: Can only use this kind of operation on pointer types. Line 31
+Error: Different types in assignment. Line 32
+Error: Variable undefined. Line 33
+Error: Left hand side of malloc operation must be a pointer type. Line 34
+Error: array index must be of type integer. Line 36
+Error: Can only use this kind of operation on array types. Line 37
+Error: Identifier not a variable. Line 38
+Error: Left side expression must be a variable. Line 38
+Error: Identifier not a variable. Line 39
+Error: Cannot use arithmetic expressions on non basic types. Line 39
+Error: Identifier not a variable. Line 40
+Error: Can only use arithmetic operation between basic types. Line 41
+Error: Can only use arithmetic operation between basic types. Line 42
+Error: Different types in assignment. Line 48
+Error: Different types in assignment. Line 49
+Error: Different types in assignment. Line 50
+Error: Cannot use arithmetic expressions on non basic types. Line 55
+Error: Variable undefined. Line 57
+Error: array index must be of type integer. Line 57
+Error: Variable undefined. Line 74

@@ -1,0 +1,9 @@
+Error: type already exists. Line 15 
+Error: Different types in assignment. Line 20
+Error: Type mismatch in operation. Line 29
+Error: Type mismatch in operation. Line 30
+Error: Variable undefined. Line 33
+Error: Different types in assignment. Line 34
+Error: Different types in assignment. Line 47
+Error: Variable undefined. Line 48
+Error: Variable undefined. Line 54

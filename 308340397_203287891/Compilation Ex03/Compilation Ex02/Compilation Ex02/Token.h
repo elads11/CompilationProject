@@ -1,0 +1,69 @@
+#ifndef TOKEN_H
+#define TOKEN_H
+
+#include <stdio.h>
+#include <stdlib.h>
+#include <string.h>
+
+extern FILE *yyin;
+extern FILE *yyout;
+extern int yylex(void);
+
+typedef enum eTOKENS
+{
+	TOKEN_OP_INC,
+	TOKEN_AR_OP,
+	TOKEN_REL_OP,
+	TOKEN_OP_ASSIGNMENT,
+	TOKEN_POINTER,
+	TOKEN_ADDRESS,
+	TOKEN_SEPARATOR_SIGN_COMA,
+	TOKEN_SEPARATOR_SIGN_COLON,
+	TOKEN_SEPARATOR_SIGN_SEMICOLON,
+	TOKEN_SEPARATOR_SIGN_LP,
+	TOKEN_SEPARATOR_SIGN_RP,
+	TOKEN_SEPARATOR_SIGN_LB,
+	TOKEN_SEPARATOR_SIGN_RB,
+	TOKEN_REAL_NUM,
+	TOKEN_INT_NUM,
+	TOKEN_KEYWORD_BLOCK,
+	TOKEN_KEYWORD_BEGIN,
+	TOKEN_KEYWORD_END,
+	TOKEN_KEYWORD_TYPE,
+	TOKEN_KEYWORD_IS,
+	TOKEN_KEYWORD_INTEGER,
+	TOKEN_KEYWORD_REAL,
+	TOKEN_KEYWORD_ARRAY,
+	TOKEN_KEYWORD_OF,
+	TOKEN_KEYWORD_WHEN,
+	TOKEN_KEYWORD_DO,
+	TOKEN_KEYWORD_DEFAULT,
+	TOKEN_KEYWORD_END_WHEN,
+	TOKEN_KEYWORD_FOR,
+	TOKEN_KEYWORD_END_FOR,
+	TOKEN_KEYWORD_MALLOC,
+	TOKEN_KEYWORD_SIZE_OF,
+	TOKEN_KEYWORD_FREE,
+	TOKEN_ID,
+	TOKEN_EOF
+}eTOKENS;
+
+typedef struct Token
+{
+	eTOKENS kind;
+	char *lexeme;
+	int lineNumber;
+}Token;
+
+typedef struct Node
+{
+	Token *tokensArray;
+	struct Node *prev;
+	struct Node *next;
+} Node;
+
+void create_and_store_token(eTOKENS kind, char* lexeme, int numOfLine);
+Token *next_token();
+Token *back_token();
+
+#endif

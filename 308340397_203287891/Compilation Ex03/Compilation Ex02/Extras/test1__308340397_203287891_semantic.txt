@@ -1,0 +1,50 @@
+Error: type already exists. Line 14 
+Error: Type Undefined. Line 15
+Error: Illegal variable type. Please use one that exists. Line 17
+Error: Illegal variable type. Please use one that exists. Line 18
+Error: Variable already defined. Line 27
+Error: Illegal variable type. Please use one that exists. Line 28
+Error: Variable already defined. Line 29
+Error: Different types in assignment. Line 37
+Error: Type mismatch in operation. Line 39
+Error: Type mismatch in operation. Line 40
+Error: Cannot use arithmetic expressions on non basic types. Line 40
+Error: Variable undefined. Line 41
+Error: Variable undefined. Line 42
+Error: Cannot use arithmetic expressions on non basic types. Line 42
+Error: Different types in assignment. Line 44
+Error: Variable undefined. Line 46
+Error: Type mismatch in operation. Line 47
+Error: Type mismatch in operation. Line 49
+Error: Cannot use arithmetic expressions on non basic types. Line 49
+Error: Variable undefined. Line 50
+Error: Cannot use arithmetic expressions on non basic types. Line 50
+Error: Variable undefined. Line 52
+Error: Different types in assignment. Line 55
+Error: Different types in assignment. Line 60
+Error: Different types in assignment. Line 62
+Error: Different types in assignment. Line 63
+Error: Different types in assignment. Line 68
+Error: Different types in assignment. Line 69
+Error: Different types in assignment. Line 70
+Error: Left side expression cannot be array type. Line 73
+Error: Variable undefined. Line 76
+Error: Variable undefined. Line 77
+Error: Left hand side must be a pointer type. Line 78
+Error: Attempting to use malloc on different type. Line 80
+Error: Type mismatch in operation. Line 83
+Error: Cannot use arithmetic expressions on non basic types. Line 83
+Error: array index must be of type integer. Line 84
+Error: array index must be of type integer. Line 86
+Error: Identifier not a variable. Line 88
+Error: Left side expression must be a variable. Line 88
+Error: Identifier not a variable. Line 89
+Error: Right side expression must be a basic type. Line 89
+Error: Identifier not a variable. Line 90
+Error: Cannot use arithmetic expressions on non basic types. Line 90
+Error: Identifier not a variable. Line 91
+Error: Variable undefined. Line 91
+Error: Can only use arithmetic operation between basic types. Line 92
+Error: Can only use arithmetic operation between basic types. Line 93
+Error: Variable undefined. Line 95
+Error: can only free a variable. Line 98

@@ -1,0 +1,100 @@
+1block
+2	type word is integer;
+3	type double is real;
+4	type pInteger_tp is ^integer;
+5	type pReal_tp is ^real;
+6	type pWord_tp is ^word;
+7	type arr is array [10] of integer;
+8
+9	i : integer;
+10	w : word;
+11	r : real;
+12	d : double;
+13
+14	type pInteger_tp is ^integer;				-- Error: duplicated declaration of pInteger_tp
+15	type string is ^char;						-- Error: type character is not defined
+16
+17	c : char;			-- Error: type char is not defined, or from type Error type
+18	s : string;	-- Error: type string is not defined, or from type Error type
+19	
+20	pI1 : pInteger_tp;
+21	pI2 : pInteger_tp;
+22	pR1 : pReal_tp;
+23	pR2 : pReal_tp;
+24	pW1 : pWord_tp;
+25
+26	value_double_declaration : integer;		
+27	value_double_declaration : double;-- Error: duplicated declaration of value_double_declaration	
+28	value_no_type : no_type;	-- Error: type no_type is not defined
+29	word : integer;		-- Error: word is declared as a type
+30
+31	a1 : arr;
+32	a2 : arr;
+33
+34begin
+35	i = 2;
+36	w = 3;
+37	r = 2;
+38	d = 2.2;
+39	d = r + w;	
+40	d = r + i + 7.5;
+41	d = value_not_declared;		-- Error: value_not_declared is not declared
+42	d = r + value_not_declared; -- Error: value_not_declared is not declared
+43
+44	i = 2.2;	-- Error: mismatch between types of the left and the right sides of the assignment
+45	i = w;			
+46	i = value_not_declared;	-- Error: variable value_not_declared is not declared
+47	i = i + 3.1;	-- Error: mismatch between types of the left and the right sides of the assignment
+48	i = i + w;		
+49	i = i + r + 3;	-- Error: mismatch between types of the left and the right sides of the assignment
+50	i = i + value_not_declared;	-- Error: variable value_not_declared is not declared
+51
+52	value_not_declared = 2;	-- Error: variable value_not_declared is ot declared
+53
+54	pI1 = &i;	
+55	pI2 = &w;	-- Error: w is from type word and pI2 is pointer to type integer
+56	pI1^ = i;		
+57	PI2^ = w; 	-- Error: pI2 is pointer to type integer, w is from type word 
+58	
+59	pI1 = pI2;
+60	pI1 = pR1; 	-- Error: mismatch between types of the left and the right sides of the assignment
+61	
+62	pI1 = i; -- Error: mismatch etween types of the left and the right sides of the assignment
+63	pI1 = w; -- Error: mismatch between types of the left and the right sides of the assignment
+64	i = pI1^;			
+65	w = pI2^;-- Error: mismatch between types of the left and the right sides of the assignment
+66	
+67	w = i^;	-- Error: variable i is not of a pointer type
+68	i = pR1^; -- Error: mismatch between types of the left and the right sides of the assignment
+69	w = pR2;	-- Error: mismatch between types of the left and the right sides of the assignment
+70	w = pR2^;	-- Error: mismatch between types of the left and the right sides of the assignment
+71	
+72	
+73	a1 = a2;				-- Error: assignment to array is forbidden	
+74	i = size_of(double);			
+75	i = size_of(word);			
+76	i = size_of(a1); 		-- Error: a1 is not a type name
+77	i = size_of(value_not_declared); -- Error: Value_not_declared is not declared
+78	a1 = malloc(size_of(arr));	-- Error: assignment to array is forbidden
+79	pW1 = malloc(size_of(word));
+80	pR1 = malloc(size_of(arr));-- Error: mismatch between types of the left and the right sides of the nment
+81
+82	a1[i/i]=i+w*77; 
+83	a1[i/i]=i+d*77;		 	-- Error: not all expressions are integer
+84	a1[d]=77;			-- Error: position int array can't be from type real
+85
+86	a1[&i] = 1;			-- Error: array index is not integer
+87	i[2] = 1;			-- Error: variable i is not of an array type
+88	pInteger_tp = pI1; 		-- Error: pInteger_tp is a type, not a variable
+89	pI1 = pInteger_tp; 		-- Error: pInteger_tp is a type, not a variable
+90	i = i + pInteger_tp^;		-- Error: pInteger_tp is a type, not a variable
+91	arr[5] = index;		-- Error: arr is a type, not a variable
+92	i = a1 + 1;	-- Error: can't apply arithmetic operation to variable of an array type
+93	i = pI1 + 1;			-- Error: can't apply arithmetic operation to variable of a pointer type
+94
+95	free(value_not_declared);				-- Error: value_not_declared is not declared
+96	free(pI1);	
+97      free(pW1);
+98	free(arr);				
+99	free(a1);	
+100end

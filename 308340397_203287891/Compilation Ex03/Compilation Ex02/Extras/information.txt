@@ -1,0 +1,16 @@
+Students ids:
+1. 308340397
+2. 203287891
+
+Students names:
+1. Avi Bechor
+2. Elad Samocha
+
+Operating system:
+Windows7 - 64Bit
+
+Development enviroment:
+Visual Studio 2010
+
+Note:
+Please read our IMPORTANT-NOTE.txt file before running the tests. Thanks!

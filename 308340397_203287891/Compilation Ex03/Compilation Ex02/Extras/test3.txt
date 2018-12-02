@@ -1,0 +1,77 @@
+block
+	type ptr is ^integer;
+	type int is integer;
+	type double is real;
+	type arr is array [10] of integer;
+	
+	index : integer;
+	i : int;                                    
+	int_var1 : int;
+	int_var2 : int;
+	int_var_double_declare : int;
+	int_var_double_declare : int;			
+	no_type_value : no_type;			
+	double2var : double;
+	pointer_var : ptr;
+	pointer_var2 : ptr;
+	arr_var : arr;
+	not_arr_var : int;
+begin
+	int_var1 = 2.2;					
+	int_var1 = int_var1 + 3.1;			
+	int_var_not_decalared = 2;			
+	double2var = 10.2;				
+	double2var = 10;				
+	pointer_var = &index; 					
+	pointer_var = &int_var1;			
+	pointer_var = int_var1;				
+	pointer_var^ = int_var1;			
+	pointer_var = pointer_var2;			
+	int_var2 = pointer_var^;			
+	int_var2 = int_var1^;				
+	double2var = pointer_var^;
+	int_var1 = size_of(arr_var);	
+	arr_var = malloc(size_of(arr));	
+	arr_var[int_var1/int_var2]=int_var1+int_var2*77;
+	arr_var[&int_var1] = 1;				
+	not_arr_var[2] = 1;				
+	ptr = pointer_var; 				
+	int_var1 = i + ptr^;				
+	arr[5] = index;					
+	int_var1 = arr_var + 1;				
+	int_var1 = pointer_var + 1;			
+
+
+     	block
+		double2var : int;	
+	begin
+		double2var = 33.3;	
+		pointer_var^ = &int_var1;
+		pointer_var^ = pointer_var;
+		i = i + pointer_var^;
+		block
+			int : integer;
+		begin
+			int = double2var + int_var1;	
+			arr_var[size_of(ptr)] = 3;	
+			arr_var[size_of(int)] = 1;	
+		end;	
+	end;
+
+	for (i=0;i<=pointer_var^;i++)
+		arr_var[i] = int_var1**i;	
+	end_for;
+	
+	i = 0;
+	when (i!=10)
+		do
+			int_var1 = arr_var[i];		
+			arr_var[i] = int_var1 - 1;
+				
+		default    int_var1 = 0;
+	end_when; 
+
+	free(arr_value);				
+
+
+end 

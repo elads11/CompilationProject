@@ -1,0 +1,55 @@
+1block
+2	type word is integer;
+3	
+4	i : word;
+5	j : integer;
+6	k : integer;
+7	val : integer;
+8
+9	x : real;
+10begin
+11	k = 5;
+12	for (i=0;i<=10;i++) val = val + k; end_for;				-- Error: index must be integer; cant be of a user-defined type
+13
+14	block
+15		type val is integer;
+16		i : integer;
+17		x : integer;
+18		z : integer;
+19	begin
+20		k = 7.7;											-- Error: k is from type integer
+21		for (i=0;i<=10;i++) x = x + k; end_for;				-- Ok: here, i is from type integer
+22		for (j=0;j<=10;j++) val = val + k; end_for;			-- Error: here, val is a type, not a varible
+23		block
+24			k : real;
+25			m : integer;
+26			z : val;
+27		begin
+28			k = 8.3;										-- Ok: in this scope k is from type real
+29			for (j=0;j<=10;j++) m = m + k; end_for;			-- Error: here m is from type integer, k is from type real
+30for (j=0;j<=10;j++) m = x + i + 3; end_for;	-- Ok: in this scope all varibles are from type integer
+31          
+32		end;
+33		m = 1000;											-- Error: m not declare in this scope.
+34		x = 54.2;											-- Error: in this scope, x is from type integer
+35	end;
+36
+37	x = 54.2;												-- Ok: here, x is from type real
+38	
+39	j = 0;
+40	when (i < 10)
+41		do
+42			j = j + 1;		
+43		default  
+44			block
+45				y : integer;
+46			begin
+47				y = x;										-- Error: here x is from type real, y from type integer
+48				y = m;										-- Error: m is not declare in this scope.	
+49				y = k;										-- Ok: here k is from type integer
+50		end;
+51	end_when;
+52
+53	val = 7;												-- Ok: val is from type integer, no longer a type
+54	val = m;												-- Error: m not declare in this scope.
+55end

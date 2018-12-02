@@ -1,0 +1,100 @@
+block
+	type word is integer;
+	type double is real;
+	type pInteger_tp is ^integer;
+	type pReal_tp is ^real;
+	type pWord_tp is ^word;
+	type arr is array [10] of integer;
+
+	i : integer;
+	w : word;
+	r : real;
+	d : double;
+
+	type pInteger_tp is ^integer;
+	type string is ^char;						
+
+	c : char;
+	s : string;
+	
+	pI1 : pInteger_tp;
+	pI2 : pInteger_tp;
+	pR1 : pReal_tp;
+	pR2 : pReal_tp;
+	pW1 : pWord_tp;
+
+	value_double_declaration : integer;		
+	value_double_declaration : double;	
+	value_no_type : no_type;
+	word : integer;
+
+	a1 : arr;
+	a2 : arr;
+
+begin
+	i = 2;
+	w = 3;
+	r = 2;
+	d = 2.2;
+	d = r + w;	
+	d = r + i + 7.5;
+	d = value_not_declared;
+	d = r + value_not_declared; 
+
+	i = 2.2;
+	i = w;			
+	i = value_not_declared;
+	i = i + 3.1;
+	i = i + w;		
+	i = i + r + 3;
+	i = i + value_not_declared;
+
+	value_not_declared = 2;
+
+	pI1 = &i;	
+	pI2 = &w;
+	pI1^ = i;		
+	pI2^ = w;  
+	
+	pI1 = pI2;
+	pI1 = pR1;
+	
+	pI1 = i; 
+	pI1 = w; 
+	i = pI1^;			
+	w = pI2^;
+	
+	w = i^;	
+	i = pR1^;
+	w = pR2;
+	w = pR2^;
+	
+	
+	a1 = a2;	
+	i = size_of(double);			
+	i = size_of(word);			
+	i = size_of(a1); 
+	i = size_of(value_not_declared); 
+	a1 = malloc(size_of(arr));
+	pW1 = malloc(size_of(word));
+	pR1 = malloc(size_of(arr));
+
+	a1[i/i]=i+w*77; 
+	a1[i/i]=i+d*77;		
+	a1[d]=77;
+
+	a1[&i] = 1;
+	i[2] = 1;
+	pInteger_tp = pI1; 
+	pI1 = pInteger_tp; 
+	i = i + pInteger_tp^;
+	arr[5] = index;	
+	i = a1 + 1;
+	i = pI1 + 1;
+
+	free(value_not_declared);				
+	free(pI1);	
+        free(pW1);
+	free(arr);				
+	free(a1);	
+end

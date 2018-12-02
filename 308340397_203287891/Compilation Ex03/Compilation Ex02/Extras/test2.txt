@@ -1,0 +1,55 @@
+block
+	type word is integer;
+	
+	i : word;
+	j : integer;
+	k : integer;
+	val : integer;
+
+	x : real;
+begin
+	k = 5;
+	for (i=0;i<=10;i++) val = val + k; end_for;
+
+        block
+		type val is integer;
+		i : integer;
+		x : integer;
+		z : integer;
+	begin
+		k = 7.7;					
+		for (i=0;i<=10;i++) x = x + k; end_for;		
+		for (j=0;j<=10;j++) val = val + k; end_for;
+		block
+			k : real;
+			m : integer;
+			z : val;
+		begin
+			k = 8.3;				
+			for (j=0;j<=10;j++) m = m + k; end_for;		
+for (j=0;j<=10;j++) val = val + k; end_for;
+ 
+		end;
+		m = 1000;	
+		x = 54.2;					
+	end;
+
+	x = 54.2;
+	
+	j = 0;
+	when (i < 10)
+		do
+			j = j + 1;		
+		default  
+			block
+				y : integer;
+			begin
+				y = x;		
+				y = m;			
+				y = k;	
+		end;
+	end_when;
+
+	val = 7;						
+	val = m;						
+end

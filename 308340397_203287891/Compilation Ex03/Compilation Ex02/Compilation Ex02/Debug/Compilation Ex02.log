@@ -1,0 +1,30 @@
+﻿Build started 28/08/2018 22:41:41.
+     1>Project "F:\308340397_203287891\Compilation Ex03\Compilation Ex02\Compilation Ex02\Compilation Ex02.vcxproj" on node 2 (build target(s)).
+     1>InitializeBuildStatus:
+         Touching "Debug\Compilation Ex02.unsuccessfulbuild".
+       ClCompile:
+         C:\Program Files (x86)\Microsoft Visual Studio 10.0\VC\bin\CL.exe /c /ZI /nologo /W3 /WX- /Od /Oy- /D _MBCS /Gm /EHsc /RTC1 /MDd /GS /fp:precise /Zc:wchar_t /Zc:forScope /Fo"Debug\\" /Fd"Debug\vc100.pdb" /Gd /TC /analyze- /errorReport:prompt parser.c
+         parser.c
+     1>f:\308340397_203287891\compilation ex03\compilation ex02\compilation ex02\parser.c(52): warning C4996: 'fopen': This function or variable may be unsafe. Consider using fopen_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
+                 c:\program files (x86)\microsoft visual studio 10.0\vc\include\stdio.h(234) : see declaration of 'fopen'
+     1>f:\308340397_203287891\compilation ex03\compilation ex02\compilation ex02\parser.c(53): warning C4996: 'fopen': This function or variable may be unsafe. Consider using fopen_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
+                 c:\program files (x86)\microsoft visual studio 10.0\vc\include\stdio.h(234) : see declaration of 'fopen'
+       Link:
+         C:\Program Files (x86)\Microsoft Visual Studio 10.0\VC\bin\link.exe /ERRORREPORT:PROMPT /OUT:"F:\308340397_203287891\Compilation Ex03\Compilation Ex02\Debug\Compilation Ex02.exe" /NOLOGO kernel32.lib user32.lib gdi32.lib winspool.lib comdlg32.lib advapi32.lib shell32.lib ole32.lib oleaut32.lib uuid.lib odbc32.lib odbccp32.lib /MANIFEST /ManifestFile:"Debug\Compilation Ex02.exe.intermediate.manifest" /MANIFESTUAC:"level='asInvoker' uiAccess='false'" /DEBUG /PDB:"F:\308340397_203287891\Compilation Ex03\Compilation Ex02\Debug\Compilation Ex02.pdb" /TLBID:1 /DYNAMICBASE /NXCOMPAT /IMPLIB:"F:\308340397_203287891\Compilation Ex03\Compilation Ex02\Debug\Compilation Ex02.lib" /MACHINE:X86 Debug\BinaryTree.obj
+         Debug\HashTable.obj
+         Debug\lex.yy.obj
+         Debug\parser.obj
+         Debug\StackOfTables.obj
+         Debug\Token.obj
+         LINK : F:\308340397_203287891\Compilation Ex03\Compilation Ex02\Debug\Compilation Ex02.exe not found or not built by the last incremental link; performing full link
+         Compilation Ex02.vcxproj -> F:\308340397_203287891\Compilation Ex03\Compilation Ex02\Debug\Compilation Ex02.exe
+       Manifest:
+         C:\Program Files (x86)\Microsoft SDKs\Windows\v7.0A\bin\mt.exe /nologo /verbose /outputresource:"F:\308340397_203287891\Compilation Ex03\Compilation Ex02\Debug\Compilation Ex02.exe;#1" /manifest "Debug\Compilation Ex02.exe.intermediate.manifest"
+       FinalizeBuildStatus:
+         Deleting file "Debug\Compilation Ex02.unsuccessfulbuild".
+         Touching "Debug\Compilation Ex02.lastbuildstate".
+     1>Done Building Project "F:\308340397_203287891\Compilation Ex03\Compilation Ex02\Compilation Ex02\Compilation Ex02.vcxproj" (build target(s)).
+
+Build succeeded.
+
+Time Elapsed 00:00:00.44
